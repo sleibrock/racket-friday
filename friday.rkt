@@ -8,13 +8,10 @@
 
 ; Define a macro that makes code run only on Friday
 (define-syntax (on-friday stx)
-  (syntax-case stx ()
-    [(_ code ...)
-     (with-syntax ([listof-code (syntax->datum #'(code ...))])
-       (let ([d (date-week-day (seconds->date (current-seconds)))])
-         (if (not (eqv? d 5))
-             #`(error 'on-friday "It's not friday")
-             #`(begin ,listof-code))))]))
+  (define code (syntax->list stx))
+  (if (not (eqv? 5 (date-week-day (seconds->date (current-seconds)))))
+      (error 'on-friday "It's not Friday")
+      (datum->syntax stx (cons 'begin (cdr code)))))
 
 
 ; Run a sample piece of code if ran as main
