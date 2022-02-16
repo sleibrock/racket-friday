@@ -24,6 +24,3 @@
    (displayln (format "Hello ~a, it's finally Friday!!" name))))
            
 ; end
-      
-        
-  
