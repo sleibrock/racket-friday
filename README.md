@@ -31,6 +31,6 @@ on-friday: it's not friday  ; if it isn't friday
 ...       ; if it is friday
 ```
 
-There are too many ways of writing syntactically incorrect, so I opted to write code that only *runs* when it is Friday. This is a language macro that re-writes your code to run the code when it is Friday, or it produces an error when it is not.
+There are too many ways of writing syntactically incorrect code, so I opted to write code that only *runs* when it is Friday. This is a language macro that re-writes your code to run the code when it is Friday, or it produces an error when it is not.
 
 A complete joke... unless you want to implement it in your code. I am not at fault. MIT License for all. Semi-inspired by the legendary `only-once` macro.
